@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+font-family: 'Bruno Ace SC', sans-serif;
+background-color: #121212;
+}
+
+.wrapper  {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    padding-left: 270px;
+    background-color: #121212;
+    color: #fff;
+}
+
+.menu a {
+    color:#fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.menu li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.menu {
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.menu a:hover {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: rgb(118, 255, 3);
+    color: #191c32;
+    transition:none
+    ;
+}       
+
+
+.menu .active {
+    color: #76ff03;
+}
+
+
+
+.navbar{
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   padding: 1em;
+}
+
+.main {
+    flex: 1;
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+span {
+    color: #76ff03;
+}
+
+.download-cv {
+    padding: 10px 20px;
+    background-color: #76ff03;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px 5px rgba(102, 231, 200, .69);
+
+}
+
+.download-cv:hover {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.main img {
+    background-color: #009999;
+    border-radius: 40%;
+    width: 500px;
+    border: 1px solid #76ff03;
+    box-shadow: 3px 3px 11px 5px rgba(102, 231, 200, .69);
+}
+
+.sidebar {
+  position: fixed;   /* Se queda fijo a la izquierda */
+  left: 0;
+  top: 0;
+  width: 250px;      /* Ancho de tu menú */
+  height: 100vh;     /* Ocupa todo el alto de la pantalla */
+  background-color: #121212; /* Color oscuro como el de la imagen */
+  display: flex;
+  flex-direction: column; /* Apila logo y links verticalmente */
+  padding: 2px;
+  border-right: 2px solid #76ff03;
+  box-shadow: 1px 3px 11px 5px rgba(102, 231, 200, .69);/* Línea naranja lateral */
+  gap: 3em; /* Espacio entre elementos */
+}
+
+
+
+.logos-container {
+    width:calc(200% - 1px);
+  overflow: hidden; /* Esconde los iconos que salen del borde */
+  padding: 40px 0;
+  background: transparent;
+  white-space: nowrap; /* Evita que los iconos se bajen de línea */
+  display: flex;
+  align-items: center;
+}
+
+.logos-slide {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100%; /* Evita que los logos se encojan */
+  animation: 10s slide infinite linear; /* Ajusta los segundos para la velocidad */
+}
+
+.logos-slide img {
+    padding: 1em;
+    background-color: #009999;
+     border-radius: 40%;
+    object-fit: contain;
+  height: 150px;
+  width: 150px; /* Tamaño de tus iconos */
+  margin: 0 30px; /* Espacio entre logos */
+}
+
+/* La animación que crea el bucle */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pausar al pasar el ratón (opcional pero profesional) */
+.logos-container:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.footer {
+  background-color: #1a1a1a; /* Color oscuro elegante */
+  color: #ffffff;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Centra el contenido */
+  text-align: center;
+}
+
+.footer-section h3 {
+  color: #00d1b2; /* Un toque de color turquesa */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+}
+
+.contact-item .label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.contact-item a, .contact-item p {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: #00d1b2;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
