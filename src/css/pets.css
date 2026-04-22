@@ -17,6 +17,15 @@ body{
     color: #76ff03
 }
 
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #479d00;
+    border-top: 5px solid #76ff03;
+    padding: 10px;
+    box-shadow: 1px 3px 11px 5px rgba(0, 194, 13, 0.69);
+}
 
 main {
     margin: 0 auto;
@@ -36,9 +45,21 @@ main {
 
 img {
   width: 500px; /* Ajusta el tamaño del logo */
-  height: auto;
+  height: 450px; /* Ajusta el tamaño del logo */
   border-radius: 40%;
   box-shadow: 1px 3px 11px 5px rgba(102, 231, 200, .69);
   
 }
 
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #55b704;
+    color: #191c32;
+    border: 20px;
+    padding: 20px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px 5px rgba(0, 211, 14, 0.69);
+}

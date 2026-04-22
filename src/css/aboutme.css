@@ -12,113 +12,51 @@ font-weight: 400;
 font-style: normal;
 }
 
-
-/* Sección About */
-.about-section {
-    padding: 100px 10% ;
-    background-color: #080808; /* Un poco más oscuro para dar profundidad */
-    color: #fff;
+body{
+    background-color: #121212;
+    color: #76ff03;
 }
 
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Imagen a la izquierda, texto a la derecha */
-    gap: 50px;
-    align-items: center;
-}
 
-/* Efecto en la imagen */
-.about-image {
-    position: relative;
-    width: 300px;
-    height: 300px;
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
+img {
+    width: 728px;
+    height: 1280px;
     object-fit: cover;
-    border-radius: 15px;
-    border: 2px solid #00ff88;
-    z-index: 2;
-    position: relative;
+    box-shadow: 1px 3px 11px 5px rgba(0, 194, 13, 0.69);
+    border-radius: 20px;
 }
 
-.image-glow {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100%;
-    height: 100%;
-    background: #00ff88;
-    filter: blur(30px);
-    opacity: 0.3;
-    z-index: 1;
-}
 
-/* Estilos de texto */
-.about-text h2 {
-    font-size: 3rem;
+
+.contenedor {
+    display: flex;       /* Alinea los hijos en línea */
+    align-items: center; /* Centra el texto verticalmente respecto a la imagen */
+    gap: 50px;           /* Crea espacio entre la imagen y el texto */
     margin-bottom: 10px;
+    padding: 5%; /* Espacio entre bloques si tienes varios */
 }
 
-.about-text h2 span {
-    color: #00ff88; /* Verde neón de tu portafolio */
-}
 
-.about-text h3 {
-    color: #00ff88;
-    font-size: 1.2rem;
+.Tittle {
+    text-align: center;
+    margin-top: 20px;
     margin-bottom: 20px;
-    letter-spacing: 1px;
+    border-bottom: 5px solid #479d00;
+    border-top: 5px solid #76ff03;
+    padding: 10px;
+    box-shadow: 1px 3px 11px 5px rgba(0, 194, 13, 0.69);
+
 }
 
-.about-text p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #ccc;
-}
-
-.about-text p span {
-    color: #fff;
-    font-weight: bold;
-    border-bottom: 1px solid #00ff88;
-}
-
-/* Datos extra */
-.personal-info {
-    display: flex;
-    gap: 30px;
-    margin-top: 25px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-
-.dot {
-    height: 8px;
-    width: 8px;
-    background-color: #00ff88;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00ff88;
-}
-
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-    .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .about-image {
-        margin: 0 auto;
-    }
-    
-    .personal-info {
-        justify-content: center;
-    }
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #55b704;
+    color: #191c32;
+    border: 20px;
+    padding: 20px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px 5px rgba(0, 211, 14, 0.69);
 }
