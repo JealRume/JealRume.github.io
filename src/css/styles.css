@@ -250,6 +250,7 @@ span {
 
 .main {
   padding: 20px;
+  display: flex;
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
@@ -280,4 +281,5 @@ span {
     
     .menu a {
         font-size: 14px;
-    }}
+    }
+  } 
