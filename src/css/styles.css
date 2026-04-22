@@ -228,58 +228,65 @@ span {
 }
 
 @media (max-width: 768px) {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.sidebar {
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding: 10px;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-}
-
-    .info-content {
+    /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
+    .wrapper {
         width: 100%;
-    }
-
-    /* 4. Ajustamos la imagen de perfil */
-    .profile-img {
-        width: 200px; /* Un poco más pequeña en móvil */
         height: auto;
-        margin-bottom: 20px;
+        padding-left: 0;
+        display: block; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
 
-    /* 5. Los logos del carrusel */
-    .logos-slide img {
-        width: 40px; /* Íconos más pequeños */
-        margin: 0 10px;
+    /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
+    .sidebar {
+        position: relative; /* Ya no flota a la izquierda */
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #76ff03;
+        padding: 20px 0;
     }
 
-/* Ajustes para celulares muy pequeños */
-@media (max-width: 480px) {
+    .menu {
+        flex-direction: row; /* Links uno al lado del otro */
+        flex-wrap: wrap; /* Si no caben, bajan */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu a {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* 3. Main en una sola columna */
+    .main {
+        grid-template-columns: 1fr; /* Una columna en lugar de dos */
+        padding: 40px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse; /* Imagen arriba, texto abajo (opcional) */
+    }
+
+    /* 4. Ajuste de imagen de perfil */
+    .main img {
+        width: 80%; /* Más pequeña en móviles */
+        max-width: 300px;
+        margin: 0 auto 30px;
+    }
+
     h1 {
-        font-size: 2rem;
+        font-size: 2em;
+    }
+
+    /* 5. Ajuste del Carrusel de Logos */
+    .logos-slide img {
+        height: 80px;
+        width: 80px;
+        margin: 0 15px;
     }
     
-    .menu a {
-        font-size: 14px;
+    .logos-container {
+        width: 100%;
     }
-  } 
+}
+
