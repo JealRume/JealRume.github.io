@@ -116,8 +116,8 @@ span {
   position: fixed;   /* Se queda fijo a la izquierda */
   left: 0;
   top: 0;
-  width: 250px;      /* Ancho de tu menú */
-  height: 100vh;     /* Ocupa todo el alto de la pantalla */
+  width: 15%;      /* Ancho de tu menú */
+  height: 100%;     /* Ocupa todo el alto de la pantalla */
   background-color: #121212; /* Color oscuro como el de la imagen */
   display: flex;
   flex-direction: column; /* Apila logo y links verticalmente */
