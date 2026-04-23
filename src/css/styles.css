@@ -15,9 +15,9 @@ background-color: #121212;
 .wrapper  {
     display: flex;
     justify-content: flex-end;
-    width: 120%;
-    height: 120vh;
-    padding-left: 200px;
+    width: 100%;
+    height: 100vh;
+    padding-left: 250px;
     background-color: #121212;
     color: #fff;
 }
@@ -231,7 +231,6 @@ span {
     /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
     .wrapper {
         width: 100%;
-        height: auto;
         padding-left: 0;
         display: block; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
@@ -243,14 +242,13 @@ span {
         height: auto;
         border-right: none;
         border-bottom: 2px solid #76ff03;
-        padding: 20px 0;
     }
 
     .menu {
         flex-direction: row; /* Links uno al lado del otro */
         flex-wrap: wrap; /* Si no caben, bajan */
         justify-content: center;
-        gap: 10px;
+        padding: 10px;
     }
 
     .menu a {
@@ -261,21 +259,20 @@ span {
     /* 3. Main en una sola columna */
     .main {
         grid-template-columns: 1fr; /* Una columna en lugar de dos */
-        padding: 40px 20px;
-        text-align: center;
+        padding: 20px;
         display: flex;
-        flex-direction: column-reverse; /* Imagen arriba, texto abajo (opcional) */
+        flex-direction: column; /* Imagen arriba, texto abajo (opcional) */
     }
 
     /* 4. Ajuste de imagen de perfil */
     .main img {
-        width: 80%; /* Más pequeña en móviles */
-        max-width: 300px;
+        width: 250px; /* Más pequeña en móviles */
+        height: 250px;
         margin: 0 auto 30px;
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 1.8rem;
     }
 
     /* 5. Ajuste del Carrusel de Logos */
