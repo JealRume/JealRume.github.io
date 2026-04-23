@@ -244,16 +244,19 @@ span {
 @media (max-width: 768px) {
     /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
     .wrapper {
+      display: flex;
         width: 100%;
-        display: block; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
+        overflow: hidden; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
 
     /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
     .sidebar {
         position: relative; /* Ya no flota a la izquierda */
-        width: 100%;
-        height: auto;
-        border-right: none;
+        width: 80px;
+        min-width: 80px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
         border-bottom: 2px solid #76ff03;
     }
 
@@ -264,10 +267,11 @@ span {
         padding: 10px;
     }
 
-    .menu a {
-        padding: 5px 10px;
-        font-size: 0.8rem;
-    }
+      .menu a {
+        font-size: 0.6rem; /* Texto pequeño para que quepa en la barra */
+        text-align: center;
+        padding: 10px 5px;
+      }
 
     /* 3. Main en una sola columna */
     .main {
@@ -278,14 +282,25 @@ span {
     }
 
     /* 4. Ajuste de imagen de perfil */
-    .main img {
-        width: 250px; /* Más pequeña en móviles */
-        height: 250px;
-        margin: 0 auto 30px;
-    }
+     .main {
+        flex: 1; /* Ocupa el resto del espacio */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido en el espacio restante */
+        padding: 10px;
+        overflow-y: auto;
+     }
 
     h1 {
         font-size: 1.8rem;
+    }
+
+        .hero-section {
+        display: flex;
+        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
 
     /* 5. Ajuste del Carrusel de Logos */
