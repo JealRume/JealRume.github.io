@@ -26,12 +26,14 @@ background-color: #121212;
 .menu a {
     color:#fff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 15%;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .menu li {
-    list-style: none;
-    padding: 0 20px;
+    list-style:none;
+    padding: 15%;
 }
 
 .menu {
@@ -47,10 +49,10 @@ background-color: #121212;
 
 .menu a:hover {
     display: inline-block;
-    padding: 20px 50px;
-    background-color: rgb(118, 255, 3);
+    padding: auto;
+    background-color: rgb(99, 220, 0);
     color: #191c32;
-    transition:none
+    transition: none
     ;
 }       
 
@@ -230,7 +232,6 @@ span {
     /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
     .wrapper {
         width: 100%;
-        padding-left: 0;
         display: block; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
 
