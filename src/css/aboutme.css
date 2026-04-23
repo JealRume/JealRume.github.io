@@ -148,7 +148,7 @@ img {
      /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
     .sidebar {
         position: relative; /* Ya no flota a la izquierda */
-        width: 100px;
+        width: 120px;
         min-width: 80px;
         height: 100vh;
         position: sticky;
