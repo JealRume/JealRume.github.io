@@ -72,6 +72,7 @@ background-color: #121212;
 }
 
 .main {
+  background-color: #121212;
     flex: 1;
     width: 100%;
     display: flex; /* Cambiado de grid a flex */
@@ -118,11 +119,13 @@ span {
 }
 
 .main img {
-    background-color: #009999;
+    background-color: #121212;
     border-radius: 40%;
     width: 100%;
-    border: 1px solid #76ff03;
-    box-shadow: 3px 3px 11px 5px rgba(102, 231, 200, .69);
+}
+
+.profile-img {
+background-color: #121212;
 }
 
 .sidebar {
@@ -131,7 +134,7 @@ span {
   top: 0;
   width: 15%; 
   height: 100%;
-  background-color: #121212; /* Color oscuro como el de la imagen */
+  background-color: #000000; /* Color oscuro como el de la imagen */
   display: flex;
   flex-direction: column; /* Apila logo y links verticalmente */
   padding: 2px;
@@ -162,7 +165,7 @@ span {
 
 .logos-slide img {
     padding: 1em;
-    background-color: #009999;
+    background-color: #094e71;
      border-radius: 40%;
     object-fit: contain;
   height: 150px;

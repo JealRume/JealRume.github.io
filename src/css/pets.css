@@ -63,3 +63,76 @@ img {
     cursor: pointer;
     box-shadow: 1px 3px 11px 5px rgba(0, 211, 14, 0.69);
 }
+
+@media (max-width: 768px) {
+    /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
+    .wrapper {
+      display: flex;
+        width: 100%;
+        overflow: hidden; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
+    }
+     /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
+    .sidebar {
+        position: relative; /* Ya no flota a la izquierda */
+        width: 120px;
+        min-width: 80px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        border-bottom: 2px solid #76ff03;
+    }
+
+    .menu {
+        flex-direction: row; /* Links uno al lado del otro */
+        flex-wrap: wrap; /* Si no caben, bajan */
+        justify-content: center;
+        padding: 10px;
+    }
+
+      .menu a {
+        font-size: 0.6rem; /* Texto pequeño para que quepa en la barra */
+        text-align: center;
+        padding: 10px 5px;
+      }
+
+    /* 3. Main en una sola columna */
+    .main {
+        grid-template-columns: 1fr; /* Una columna en lugar de dos */
+        padding: 20px;
+        display: flex;
+        flex-direction: column; /* Imagen arriba, texto abajo (opcional) */
+    }
+
+    /* 4. Ajuste de imagen de perfil */
+     .main {
+        flex: 1; /* Ocupa el resto del espacio */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido en el espacio restante */
+        padding: 10px;
+        overflow-y: auto;
+     }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
+        align-items: end;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* 5. Ajuste del Carrusel de Logos */
+    .logos-slide img {
+        height: 80px;
+        width: 80px;
+        margin: 0 15px;
+    }
+    
+    .logos-container {
+        width: 100%;
+    }
+}
