@@ -250,14 +250,19 @@ background-color: #76ff03;
     /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
     .wrapper {
       display: flex;
+      flex-direction: row;
         width: 100%;
+        padding-left: 0;
         overflow: hidden; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
 
     /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
     .sidebar {
+        display: flex;
+        align-items: start;
+        text-align: center;
         position: relative; /* Ya no flota a la izquierda */
-        width: 120px;
+        width: 80px;
         min-width: 80px;
         height: 100vh;
         position: sticky;
@@ -280,10 +285,14 @@ background-color: #76ff03;
 
     /* 3. Main en una sola columna */
     .main {
+      flex: 1;
         grid-template-columns: 1fr; /* Una columna en lugar de dos */
         padding: 20px;
         display: flex;
-        flex-direction: column; /* Imagen arriba, texto abajo (opcional) */
+        flex-direction: column;
+        align-items: center; /* Imagen arriba, texto abajo (opcional) */
+        padding: 15px;
+        width: 100%;
     }
 
     /* 4. Ajuste de imagen de perfil */
@@ -304,7 +313,7 @@ background-color: #76ff03;
         display: flex;
         flex-direction: column-reverse; /* Imagen arriba, texto abajo */
         align-items: end;
-        text-align: center;
+        text-align: start;
         width: 100%;
     }
 
@@ -319,4 +328,4 @@ background-color: #76ff03;
         width: 100%;
     }
 }
-
+    
