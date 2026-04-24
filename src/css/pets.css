@@ -16,6 +16,80 @@ body{
     background-color: #121212;
     color: #76ff03
 }
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Usa min-height para que crezca con el contenido */
+    padding-left: 15%; /* Debe ser igual al ancho de la sidebar */
+    background-color: #121212;
+    color: #76ff03;
+    overflow-x: hidden; /* Evita cualquier desborde accidental lateral */
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 15%; 
+  height: 100%;
+  background-color: #06041d; /* Color oscuro como el de la imagen */
+  display: flex;
+  flex-direction: column; /* Apila logo y links verticalmente */
+  padding: 2px;
+  border-right: 2px solid #76ff03;
+  box-shadow: 1px 3px 11px 5px rgba(102, 231, 200, .69);/* Línea naranja lateral */
+  gap: 3em; /* Espacio entre elementos */
+}
+
+
+.menu a {
+    color:#fff;
+    text-decoration: none;
+    padding: 15%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu li {
+    list-style:none;
+    padding: 15%;
+}
+
+.menu {
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.menu a:hover {
+    display: inline-block;
+    padding: auto;
+    background-color: rgb(99, 220, 0);
+    color: #000000;
+    transition: none
+    ;
+}       
+
+
+.menu .active {
+    color: #76ff03;
+}
+
+
+
+.navbar{
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   padding: 1em;
+}
 
 h1 {
     text-align: center;
@@ -28,28 +102,28 @@ h1 {
 }
 
 main {
-    margin: 0 auto;
-    width: 80vw;
-    height: 80vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; 
-  /* Centra el contenido dentro del grid */
+  margin: 0 auto;
+  display: grid;
+  /* Cambiamos a 250px para que quepan en móviles pequeños (como iPhone SE) */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px; 
   justify-items: center; 
   align-items: start;
-  
   width: 100%;
-  padding: 40px; /* Margen interno para que no pegue a los bordes */
-  box-sizing: border-box;
-}   
+  padding: 20px; /* Reducimos padding en móvil */
+}
+
+
 
 img {
-  width: 500px; /* Ajusta el tamaño del logo */
-  height: 450px; /* Ajusta el tamaño del logo */
-  border-radius: 40%;
+  width: 400px;       /* Ocupa el ancho de su contenedor (la card) */
+  max-width: 400px;  /* Pero que no crezca más de esto en pantallas grandes */
+  height: 350px;      /* Mantiene la proporción para que no se estire */
+  border-radius: 20px; /* Un radio más sutil suele verse mejor en móviles */
   box-shadow: 1px 3px 11px 5px rgba(102, 231, 200, .69);
-  
+  display: block;
 }
+
 
 .back-to-top {
     position: fixed;
@@ -64,23 +138,42 @@ img {
     box-shadow: 1px 3px 11px 5px rgba(0, 211, 14, 0.69);
 }
 
+
 @media (max-width: 768px) {
-    /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
-    .wrapper {
+
+.wrapper {
+   display: flex;
+   flex-direction: row;
+     width: 100%;
+     padding-left: 0;
+     overflow: hidden; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
+ }
+.wrapper {
       display: flex;
+      flex-direction: row;
         width: 100%;
+        padding-left: 0;
         overflow: hidden; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
-     /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
+
+    img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 1px 3px 11px 5px rgba(0, 194, 13, 0.69);
+    border-radius: 20px;
+}
+
+    
+    /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
     .sidebar {
-        position: relative; /* Ya no flota a la izquierda */
-        width: 120px;
-        min-width: 80px;
+        display: flex;
+        align-items: start;
+        text-align: center;
+        width: 80px;
+        min-width: none;
         height: 100vh;
-        position: sticky;
-        top: 0;
-        border-bottom: 2px solid #76ff03;
-    }
+
 
     .menu {
         flex-direction: row; /* Links uno al lado del otro */
@@ -97,42 +190,53 @@ img {
 
     /* 3. Main en una sola columna */
     .main {
+      flex: 1;
         grid-template-columns: 1fr; /* Una columna en lugar de dos */
         padding: 20px;
         display: flex;
-        flex-direction: column; /* Imagen arriba, texto abajo (opcional) */
-    }
-
-    /* 4. Ajuste de imagen de perfil */
-     .main {
-        flex: 1; /* Ocupa el resto del espacio */
-        display: flex;
         flex-direction: column;
-        align-items: center; /* Centra el contenido en el espacio restante */
-        padding: 10px;
-        overflow-y: auto;
+        align-items: center; /* Imagen arriba, texto abajo (opcional) */
+        width: 100%;
+    }
      }
 
     h1 {
         font-size: 1.8rem;
     }
+    .menu {
+        flex-direction: row; /* Links uno al lado del otro */
+        flex-wrap: wrap; /* Si no caben, bajan */
+        justify-content: center;
+        padding: 10px;
+    }
 
-    .hero-section {
-        display: flex;
-        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
-        align-items: end;
+      .menu a {
+        font-size: 0.6rem; /* Texto pequeño para que quepa en la barra */
         text-align: center;
-        width: 100%;
-    }
+        padding: 10px 5px;
+      }
 
-    /* 5. Ajuste del Carrusel de Logos */
-    .logos-slide img {
-        height: 80px;
-        width: 80px;
-        margin: 0 15px;
-    }
-    
-    .logos-container {
-        width: 100%;
-    }
+  /* Ajustamos el botón de volver arriba para que no estorbe */
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #55b704;
+    color: #191c32;
+    border: 20px;
+    padding: 20px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px 5px rgba(0, 211, 14, 0.69);
+}   
+
+  /* Centrar textos de las cards */
+  .pet-card {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.galeria {
+    padding-left: 28%;
 }

@@ -191,27 +191,116 @@ background-color: #76ff03;
   animation-play-state: paused;
 }
 
+/* --- ESTILOS PARA EL FORMULARIO DE CONTACTO --- */
+
 .footer {
-  background-color: #1a1a1a; /* Color oscuro elegante */
-  color: #ffffff;
-  padding: 40px 20px 20px;
-  font-family: 'Bruno Ace SC', sans-serif;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%);
+    border-top: 2px solid #76ff03;
+    box-shadow: 0px -10px 20px rgba(118, 255, 3, 0.1);
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center; /* Centra el contenido */
-  text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #06041d; /* Efecto cristal */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(118, 255, 3, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .footer-section h3 {
-  color: #76ff03; /* Un toque de color turquesa */
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    color: #76ff03;
+    text-shadow: 0 0 10px rgba(118, 255, 3, 0.8), 0 0 20px rgba(118, 255, 3, 0.4);
 }
+
+/* Estilos de los inputs */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #479d00;
+    border-radius: 8px;
+    color: #76ff03;
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto focus: el borde brilla más */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #76ff03;
+    box-shadow: 0 0 15px rgba(118, 255, 3, 0.6);
+    transform: scale(1.01);
+}
+
+/* Estilo del botón Enviar */
+.btn-submit {
+    margin-top: 10px;
+    padding: 15px;
+    background: #76ff03;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(118, 255, 3, 0.5);
+}
+
+.btn-submit:hover {
+    background: #000;
+    color: #76ff03;
+    border: 1px solid #76ff03;
+    box-shadow: 0 0 25px rgba(118, 255, 3, 0.9);
+    letter-spacing: 2px;
+}
+
+/* Información de contacto debajo del form */
+.contact-info-mini {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid rgba(118, 255, 3, 0.2);
+    padding-top: 20px;
+}
+
+.contact-info-mini p {
+    font-size: 0.7rem;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.7rem;
+    color: #479d00;
+}
+
 
 .contact-item {
   margin-bottom: 15px;
@@ -242,7 +331,7 @@ background-color: #76ff03;
   border-top: 1px solid #333;
   padding-top: 20px;
   font-size: 0.8rem;
-  color: #666;
+  color: #06041d;
   text-align: center;
 }
 
@@ -264,7 +353,7 @@ background-color: #76ff03;
         position: sticky; /* Ya no flota a la izquierda */
         width: 80px;
         min-width: none;
-        height: 100vh;
+        height: 100%;
         position: sticky;
         top: 0;
         border-bottom: 2px solid #76ff03;
@@ -282,6 +371,8 @@ background-color: #76ff03;
         text-align: center;
         padding: 10px 5px;
       }
+
+      
 
     /* 3. Main en una sola columna */
     .main {

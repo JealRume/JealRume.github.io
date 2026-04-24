@@ -19,22 +19,28 @@ body{
 
 
 img {
-    width: 728px;
-    height: 1280px;
-    object-fit: cover;
-    box-shadow: 1px 3px 11px 5px rgba(0, 194, 13, 0.69);
+    max-width: 100%; /* No permite que la imagen sea más ancha que su contenedor */
+    width: 500px;    /* Un tamaño máximo razonable para desktop */
+    height: auto;    /* Mantiene la proporción original */
+    object-fit: contain;
     border-radius: 20px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 194, 13, 0.4);
 }
+
 
 
 
 .contenedor {
-    display: flex;       /* Alinea los hijos en línea */
-    align-items: center; /* Centra el texto verticalmente respecto a la imagen */
-    gap: 50px;           /* Crea espacio entre la imagen y el texto */
-    margin-bottom: 10px;
-    padding: 5%; /* Espacio entre bloques si tienes varios */
+    display: flex;
+    flex-wrap: wrap; /* Si no caben lado a lado, se ponen uno abajo del otro */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px; /* Evita que el contenido se estire demasiado en pantallas grandes */
+    margin: 40px auto;
 }
+
 
 
 .Tittle {
@@ -72,7 +78,14 @@ img {
     color: #fff;
     overflow-x: hidden; /* Evita cualquier desborde accidental lateral */
 }
-
+.main {
+    flex: 1; /* Esto hace que el contenido ocupe todo el espacio restante */
+    margin-left: 15%; /* Esto reserva el espacio exacto de la sidebar fija */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .sidebar {
   position: fixed;
@@ -80,7 +93,7 @@ img {
   top: 0;
   width: 15%; 
   height: 100%;
-  background-color: #121212; /* Color oscuro como el de la imagen */
+  background-color: #06041d; /* Color oscuro como el de la imagen */
   display: flex;
   flex-direction: column; /* Apila logo y links verticalmente */
   padding: 2px;
@@ -89,6 +102,17 @@ img {
   gap: 3em; /* Espacio entre elementos */
 }
 
+
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 100vh; /* Usa min-height para que crezca con el contenido */
+    padding-left: 15%; /* Debe ser igual al ancho de la sidebar */
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden; /* Evita cualquier desborde accidental lateral */
+}
 
 .menu a {
     color:#fff;
@@ -118,7 +142,7 @@ img {
     display: inline-block;
     padding: auto;
     background-color: rgb(99, 220, 0);
-    color: #191c32;
+    color: #000000;
     transition: none
     ;
 }       
@@ -129,27 +153,34 @@ img {
 }
 
 
-
-.navbar{
-    display: flex;
-   justify-content: space-between;
-    align-items: center;
-    width: 100%;
-   padding: 1em;
-}
-
 @media (max-width: 768px) {
     /* 1. Reset del Wrapper: Quitamos el padding lateral y el ancho excesivo */
     .wrapper {
       display: flex;
+      flex-direction: row;
         width: 100%;
+        padding-left: 0;
+        padding-right: 10%;
         overflow: hidden; /* Cambiamos flex por bloque para que todo fluya hacia abajo */
     }
-     /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
+
+    img {
+    width: 450px;
+    height: 320px;
+    object-fit: cover;
+    box-shadow: 1px 3px 11px 5px rgba(0, 194, 13, 0.69);
+    border-radius: 20px;
+}
+
+    
+    /* 2. Sidebar a Menú Superior: En móvil es mejor que esté arriba o sea ocultable */
     .sidebar {
-        position: relative; /* Ya no flota a la izquierda */
-        width: 120px;
-        min-width: 80px;
+        display: flex;
+        align-items: start;
+        text-align: center;
+        position: sticky; /* Ya no flota a la izquierda */
+        width: 80px;
+        min-width: none;
         height: 100vh;
         position: sticky;
         top: 0;
@@ -171,42 +202,26 @@ img {
 
     /* 3. Main en una sola columna */
     .main {
-        grid-template-columns: 1fr; /* Una columna en lugar de dos */
-        padding: 20px;
         display: flex;
-        flex-direction: column; /* Imagen arriba, texto abajo (opcional) */
+        flex-grow: 1;
+        grid-template-columns: 1fr; /* Una columna en lugar de dos */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Imagen arriba, texto abajo (opcional) */
+        width: 100%;
     }
 
     /* 4. Ajuste de imagen de perfil */
-     .main {
+      .main {
         flex: 1; /* Ocupa el resto del espacio */
         display: flex;
         flex-direction: column;
         align-items: center; /* Centra el contenido en el espacio restante */
-        padding: 10px;
+        padding: 3px;
         overflow-y: auto;
      }
 
     h1 {
         font-size: 1.8rem;
-    }
-
-    .hero-section {
-        display: flex;
-        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
-        align-items: end;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* 5. Ajuste del Carrusel de Logos */
-    .logos-slide img {
-        height: 80px;
-        width: 80px;
-        margin: 0 15px;
-    }
-    
-    .logos-container {
-        width: 100%;
     }
 }

@@ -88,24 +88,32 @@
   <div class="footer-container">
     <div class="footer-section">
       <h3>CONTACT ME</h3>
+      
+      <!-- Formulario -->
+      <form action="#" method="POST" class="contact-form">
+        <div class="form-group">
+          <input type="text" name="nombre" placeholder="TU NOMBRE" required>
+        </div>
+        
+        <div class="form-group">
+          <input type="email" name="email" placeholder="TU EMAIL" required>
+        </div>
 
-      <div class="contact-item">
-        <span class="label">PHONE:</span>
-        <a href="tel:123-456-7890">302-280-7783</a>
-      </div>
+        <div class="form-group">
+          <textarea name="mensaje" rows="4" placeholder="ESCRIBE TU MENSAJE AQUÍ..." required></textarea>
+        </div>
 
-      <div class="contact-item">
-        <span class="label">EMAIL:</span>
-        <a href="@email.com">kaynslade@gmail.com</a>
-      </div>
+        <button type="submit" class="btn-submit">ENVIAR MENSAJE</button>
+      </form>
 
-      <div class="contact-item">
-        <span class="label">CITY:</span>
-        <p>Barranquilla/Atlantico</p>
+      <div class="contact-info-mini">
+        <p>📍 Barranquilla, Atlántico</p>
+        <p>📞 302-280-7783</p>
       </div>
     </div>
   </div>
+  
   <div class="footer-bottom">
-    &copy; 2026 Todos los derechos reservados.
+    &copy; 2026 Jesús Ruiz. Todos los derechos reservados.
   </div>
 </footer>

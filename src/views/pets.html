@@ -7,33 +7,56 @@
     <link rel="stylesheet" href="/src/css/pets.css">
 </head>
 <body>
-    <header>
-        <h1>My pets</h1>
-        <nav>
-            <a href="/index.html" class="back-to-top">
-                ← Home
+<h1>My Pets</h1>
+    <div class="wrapper">
+
+            <header>
+            <nav class="sidebar">
+                <div class="logo-container">
+                <h2>J<span>R</span></h2>
+                </div>
+
+                <ul class="menu">
+                <li ><a href="/index.html" class="active">Home</a></li>
+                <li><a href="/src/views/about-me.html" class="about">About Me</a></li>
+                <li><a href="#contacto">Contact</a></li>
+                <li><a href="https://github.com/JealRume" target="_blank" rel="noopener noreferrer">Projects</a></li>
+                <li><a href="/src/views/pets.html">Pets</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main class="galeria">
+            <a href="/index.html" class="back-to-top" id="btnBackToTop">
+            <span class="arrow">↑</span>
+            <span class="text">HOME</span>
             </a>
-        </nav>
-    </header>
+            <article class="pet-card">
+                <img src="/public/img/img1.jpg" alt="Perro">
+                <h3>Jacob</h3>
+                <p>A pitbull rednose, very good and very energy.</p>
+            </article>
 
-    <main class="galeria">
-        <article class="pet-card">
-            <img src="/public/img/img1.jpg" alt="Perro">
-            <h3>Jacob</h3>
-            <p>Un pitbull atigrado, muy noble y un poco enérgico.</p>
-        </article>
+            <article class="pet-card">
+                <img src="/public/img/img2.jpg" alt="Gekko">
+                <h3>Shelby</h3>
+                <p>Gekko, a reptile very curious.</p>
+            </article>
 
-        <article class="pet-card">
-            <img src="/public/img/img2.jpg" alt="Gekko">
-            <h3>Shelby</h3>
-            <p>Gekko, a reptile very curious.</p>
-        </article>
-
-        <article class="pet-card">
-            <img src="/public/img/img3.jpg" alt="Snake">
-            <h3>Orochi</h3>
-            <p>A snake, very long and slithery.</p>
-        </article>
-    </main>
+            <article class="pet-card">
+                <img src="/public/img/img3.jpg" alt="Snake">
+                <h3>Orochi</h3>
+                <p>A snake, very long and slithery.</p>
+            </article>
+        </main>
+    </div>    
+    <footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </footer>
 </body>
 </html>
