@@ -21,7 +21,7 @@ body{
     align-items: center;
     width: 100%;
     min-height: 100vh; /* Usa min-height para que crezca con el contenido */
-    padding-left: 15%; /* Debe ser igual al ancho de la sidebar */
+    padding-left: none; /* Debe ser igual al ancho de la sidebar */
     background-color: #121212;
     color: #76ff03;
     overflow-x: hidden; /* Evita cualquier desborde accidental lateral */
